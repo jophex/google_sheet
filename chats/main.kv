@@ -1,0 +1,114 @@
+ScreenManager:
+    id: manager
+    MDScreen:
+        name:'one'
+        #md_bg_color: 203/255, 203/255, 203/255, 1
+        name: "one"
+        MDBoxLayout:
+            orientation: "vertical"
+            MDToolbar:
+                pos_hint: {"top":1.0}
+                elevation: 10
+                specific_text_color: app.theme_cls.accent_color
+
+                MDLabel:
+                    text: "MESSAGE"
+                    halign: "center"
+                    pos_hint:{'center_x': .1, 'center_y':.3}
+                    size_hint_x: 9
+
+                MDIconButton:
+                    icon: "account-search"
+                    pos_hint:{'center_x': .9, 'center_y':.35}
+
+            ScrollView:
+                MDList:
+                    id: container
+                    radius: [15]
+
+    MDScreen:
+        name: "two"
+        MDBoxLayout:
+            orientation: "vertical"
+        MDToolbar:
+            title: app.title
+            elevation: 10
+            id:tool
+            pos_hint: {'top':1.0}
+            left_action_items: [["chevron-left", lambda x: app.back_button(), "back"]]
+            right_action_items: [["video", lambda x: app.callback_1(), "camera"], ["phone", lambda x: app.callback_2(), "calls"], ["dots-vertical", lambda x: app.callback(), "menu"]]
+
+
+        MDTextFieldRound:
+            id: message
+            icon_right: 'camera'
+            hint_text: 'Type a message'
+            size_hint: .7, None
+            pos_hint:{'center_x': .45, 'center_y': .03}
+
+        MDIconButton:
+            icon: "send"
+            pos_hint:{'center_x': .93, 'center_y': .03}
+            user_font_size: "30sp"
+
+        ScrollView:
+            FloatLayout:
+                MDChip:
+                    id: chip
+                    text:
+                    icon: 'city'
+                    check: True
+                    pos_hint: {'center_x': .28, 'center_y': .8}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Card@MDCard>
+    orientation: "vertical"
+    md_bg_color: 1, 1, 1, 1
+    padding: "10dp"
+    #spacing: "5dp"
+    border_radius: 20
+    border_color_a: 0
+    radius: [15]
+    size_hint: 9, 0.2
+    focus_behavior: False
+    ripple_behavior: True
+    elevation: 0.1
+
+
+
+
+
+
+
+
