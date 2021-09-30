@@ -1,0 +1,187 @@
+#:import sm kivy.uix.screenmanager
+ScreenManager:
+    id:manager
+    transition:sm.FadeTransition(duration=.0)
+
+    MDScreen:
+        md_bg_color: 245/255, 245/255, 245/255, 1
+        name:"one"
+        FloatLayout:
+            Chanzi:
+                pos_hint:{'center_x': .25, 'center_y':.65}
+                on_release:
+                    manager.current = 'two'
+                MDIcon:
+                    icon:"city"
+                    halign:"center"
+                    pos_hint:{'center_x':.5, 'center_y': .6}
+                    theme_text_color: "Custom"
+                    text_color: 83/225, 186/225, 115/225, 1
+
+                MDLabel:
+                    text:"ARUSHA"
+                    bold:True
+                    halign: "center"
+                    theme_text_color: "Custom"
+                    text_color: 83/225, 186/225, 115/225, 1
+                    halign:'center'
+            Chanzi:
+                pos_hint:{'center_x': .75, 'center_y':.65}
+                on_release:
+                    manager.current = 'three'
+                MDIcon:
+                    icon:"city"
+                    halign:"center"
+                    pos_hint:{'center_x':.5, 'center_y': .6}
+                    theme_text_color: "Custom"
+                    text_color: 83/225, 186/225, 115/225, 1
+                MDLabel:
+                    text:"DAR-ES-SALAAM"
+                    bold:True
+                    halign:'center'
+                    theme_text_color: "Custom"
+                    text_color: 83/225, 186/225, 115/225, 1
+                    halign:'center'
+                    text_color: 83/225, 186/225, 115/225, 1
+                    halign:'center'
+
+
+            Chanzi:
+                pos_hint:{'center_x': .5, 'center_y':.37}
+                on_release:
+                    manager.current = 'four'
+                MDIcon:
+                    icon:"city"
+                    halign:"center"
+                    pos_hint:{'center_x':.5, 'center_y': .6}
+                    theme_text_color: "Custom"
+                    text_color: 83/225, 186/225, 115/225, 1
+                MDLabel:
+                    text:"ZANZIBAR"
+                    bold:True
+                    halign:'center'
+                    theme_text_color: "Custom"
+                    text_color: 83/225, 186/225, 115/225, 1
+                    halign:'center'
+
+            MDCard:
+                pos_hint:{'center_x': .5, 'center_y':.9}
+                size_hint: 0.7, 0.09
+                radius: [15]
+                focus_behavior: False
+                ripple_behavior: True
+                elevation: .99
+                MDLabel:
+                    text: "CHANZI"
+                    bold:True
+                    halign:'center'
+                    theme_text_color: "Custom"
+                    text_color: 83/225, 186/225, 115/225, 1
+
+
+    MDScreen:
+        name:'two'
+        MDBoxLayout:
+            orientation: "vertical"
+            MDToolbar:
+                size_hint: 1, .24
+                elevation: 10
+                specific_text_color: app.theme_cls.accent_color
+
+                MDLabel:
+                    text: "MESSAGE"
+                    halign: "center"
+                    pos_hint:{'center_x': .1, 'center_y':.3}
+                    size_hint_x: 9
+
+                MDIconButton:
+                    icon: "account-search"
+                    pos_hint:{'center_x': .9, 'center_y':.35}
+
+            ScrollView:
+                MDList:
+                    id: container
+                    radius: [15]
+                    TwoLineAvatarIconListItem:
+                        on_release: print("Click!")
+                        text: "Ngusero"
+                        secondary_text: "Secondary text here"
+                        on_release:
+                            manager.current = "three"
+
+                        IconLeftWidget:
+                            icon: "city"
+
+                    TwoLineAvatarIconListItem:
+                        on_release: print("Click!")
+                        text: "USA"
+                        secondary_text: "Secondary text here"
+                        radius: [15]
+
+                        IconLeftWidget:
+                            icon: "church"
+
+                    TwoLineAvatarIconListItem:
+                        on_release: print("Click!")
+                        text: "Njiro"
+                        secondary_text: "Secondary text here"
+
+
+                        IconLeftWidget:
+                            icon: "tent"
+
+    MDScreen:
+        name: "three"
+        MDBoxLayout:
+            orientation: "vertical"
+            MDToolbar:
+                title: "ZANIALLY"
+                elevation: 10
+                id:tool
+                left_action_items: [["chevron-left", lambda x: print("ok")]]
+                right_action_items: [["phone", lambda x: print("ok")]]
+                right_action_items: [["video", lambda x: print("ok")]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Chanzi@MDCard>:
+    orientation: "vertical"
+    md_bg_color: 1, 1, 1, 1
+    radius: [15]
+    size_hint: 0.4, None
+    focus_behavior: False
+    ripple_behavior: True
+    elevation: 0.1
+
