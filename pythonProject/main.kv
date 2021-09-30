@@ -1,0 +1,28 @@
+ScreenManager:
+    id: manager
+    MDScreen:
+        id: one
+        name: "one"
+
+        MDTextFieldRound:
+            id: message
+            icon_right: 'camera'
+            hint_text: 'Type a message'
+            size_hint: .7, None
+            pos_hint:{'center_x': .45, 'center_y': .03}
+
+        MDIconButton:
+            icon: "send"
+            pos_hint:{'center_x': .93, 'center_y': .03}
+            user_font_size: "30sp"
+            on_release:
+                app.add_chip()
+
+    MDScreen:
+        id: two
+        name: 'two'
+        ScrollView:
+            MDChip:
+                id: chips
+                check: True
+                pos_hint: {'center_x': .28, 'center_y': .8}
